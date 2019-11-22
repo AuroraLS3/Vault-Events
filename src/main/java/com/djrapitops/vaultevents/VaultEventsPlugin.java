@@ -1,6 +1,6 @@
 package com.djrapitops.vaultevents;
 
-import com.djrapitops.vaultevents.events.VaultEventsAvailableEvent;
+import com.djrapitops.vaultevents.events.EconomyEventsAvailableEvent;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -75,6 +75,6 @@ public class VaultEventsPlugin extends JavaPlugin {
         getServer().getServicesManager().register(Economy.class, wrappedEco, this, ServicePriority.Highest);
         getLogger().info("Vault Events registered - Events can now be listened to.");
         eventsAvailable = true;
-        Bukkit.getPluginManager().callEvent(new VaultEventsAvailableEvent(wrappedEco));
+        Bukkit.getPluginManager().callEvent(new EconomyEventsAvailableEvent(wrappedEco));
     }
 }

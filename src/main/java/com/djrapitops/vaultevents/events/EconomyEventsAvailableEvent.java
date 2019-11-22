@@ -12,11 +12,11 @@ import org.bukkit.event.HandlerList;
  *
  * @author Rsl1122
  */
-public class VaultEventsAvailableEvent extends Event {
+public class EconomyEventsAvailableEvent extends Event {
 
     private final Economy economy;
 
-    public VaultEventsAvailableEvent(Economy economy) {
+    public EconomyEventsAvailableEvent(Economy economy) {
         super(!Bukkit.isPrimaryThread());
         this.economy = economy;
     }
