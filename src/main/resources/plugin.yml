@@ -1,0 +1,5 @@
+name: VaultEvents
+main: com.djrapitops.vaultevents.VaultEvents
+version: 1.7.0
+author: Rsl1122
+depend: [Vault]
