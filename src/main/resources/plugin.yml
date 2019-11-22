@@ -1,5 +1,5 @@
 name: VaultEvents
-main: com.djrapitops.vaultevents.VaultEvents
+main: com.djrapitops.vaultevents.VaultEventsPlugin
 version: 1.7.0
 author: Rsl1122
 depend: [Vault]
