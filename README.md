@@ -25,7 +25,7 @@ https://github.com/MilkBowl/VaultAPI
 
 plugin.yml:
 ```yml
-(soft)depends: [Vault, VaultEvents]
+(soft)depend: [Vault, VaultEvents]
 ```
 
 ## Listening for events
