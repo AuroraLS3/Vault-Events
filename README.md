@@ -33,3 +33,7 @@ plugin.yml:
 Use the Event API of Spigot: https://www.spigotmc.org/wiki/using-the-event-api/
 
 - [See available events](https://github.com/Rsl1122/Vault-Events/tree/master/src/main/java/com/djrapitops/vaultevents/events) 
+
+## License
+
+Licensed under MIT-license
