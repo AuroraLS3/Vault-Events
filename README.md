@@ -16,7 +16,7 @@ https://github.com/MilkBowl/VaultAPI
 
 <dependencies>
     <dependency>
-        <groupId>com.github.Rsl1122</groupId>
+        <groupId>com.github.AuroraLS3</groupId>
         <artifactId>Vault-Events</artifactId>
         <version>{commit}</version>
     </dependency>
