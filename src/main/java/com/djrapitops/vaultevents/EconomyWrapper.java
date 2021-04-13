@@ -110,7 +110,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public EconomyResponse withdrawPlayer(String s, double amount) {
-        return original.withdrawPlayer(s, amount);
+        EconomyResponse response = original.withdrawPlayer(Bukkit.getOfflinePlayer(s), amount);
+        callEvent(new PlayerWithdrawEvent(Bukkit.getOfflinePlayer(s), amount, response));
+        return response;
     }
 
     public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount) {
@@ -121,7 +123,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public EconomyResponse withdrawPlayer(String s, String s1, double amount) {
-        return original.withdrawPlayer(s, s1, amount);
+        EconomyResponse response = original.withdrawPlayer(Bukkit.getOfflinePlayer(s), s1, amount);
+        callEvent(new PlayerWithdrawEvent(Bukkit.getOfflinePlayer(s), amount, s1, response));
+        return response;
     }
 
     public EconomyResponse withdrawPlayer(OfflinePlayer player, String s, double amount) {
@@ -132,7 +136,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public EconomyResponse depositPlayer(String s, double amount) {
-        return original.depositPlayer(s, amount);
+        EconomyResponse response = original.depositPlayer(Bukkit.getOfflinePlayer(s), amount);
+        callEvent(new PlayerDepositEvent(Bukkit.getOfflinePlayer(s), amount, response));
+        return response;
     }
 
     public EconomyResponse depositPlayer(OfflinePlayer player, double amount) {
@@ -143,7 +149,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public EconomyResponse depositPlayer(String s, String s1, double amount) {
-        return original.depositPlayer(s, s1, amount);
+        EconomyResponse response = original.depositPlayer(Bukkit.getOfflinePlayer(s), s1, amount);
+        callEvent(new PlayerDepositEvent(Bukkit.getOfflinePlayer(s), amount, s1, response));
+        return response;
     }
 
     public EconomyResponse depositPlayer(OfflinePlayer player, String s, double amount) {
@@ -154,7 +162,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public EconomyResponse createBank(String s, String s1) {
-        return original.createBank(s, s1);
+        EconomyResponse response = original.createBank(s, Bukkit.getOfflinePlayer(s1));
+        callEvent(new BankCreateEvent(s, Bukkit.getOfflinePlayer(s1), response));
+        return response;
     }
 
     public EconomyResponse createBank(String bankName, OfflinePlayer player) {
@@ -222,7 +232,9 @@ public class EconomyWrapper implements Economy {
 
     @Deprecated
     public boolean createPlayerAccount(String s, String s1) {
-        return original.createPlayerAccount(s, s1);
+        boolean success = original.createPlayerAccount(Bukkit.getOfflinePlayer(s), s1);
+        callEvent(success ? new PlayerAccountCreateSuccessEvent(Bukkit.getOfflinePlayer(s), s1) : new PlayerAccountCreateFailedEvent(Bukkit.getOfflinePlayer(s), s1));
+        return success;
     }
 
     public boolean createPlayerAccount(OfflinePlayer player, String world) {
